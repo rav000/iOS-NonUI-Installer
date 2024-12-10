@@ -1,11 +1,21 @@
 #!/bin/zsh
 echo "iOS-NonUI-Installer"
 echo "Written by @whosdraaa and @rav000"
-build_tar=""
 
+read -p "Press enter if you are in a ramdisk." r1
+echo "Waiting 6 seconds before continuing.."
+sleep 6
 #copy files from device
+./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "/usr/bin/mount_filesystems"
+./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -P 2222 root@localhost:/mnt1/usr/standalone/firmware/sep-firmware.img4 ./files/sep-firmware.img4
+./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -r -P 2222 root@localhost:/mnt1/usr/standalone/firmware/FUD ./files/FUD
+./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -r -P 2222 root@localhost:/mnt1/usr/local/standalone/firmware/Baseband ./files/Baseband
+./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -r -P 2222 root@localhost:/mnt1/usr/share/firmware/multitouch ./files/multitouch
 
 #install, modify, and delete nonUI files
+read -p "Press enter if you are in a ramdisk and copy NonUI build in tar/tgz/tar.gz" r1
+echo "Waiting 6 seconds before continuing.."
+sleep 6
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "newfs_apfs -A -v SystemB /dev/disk0s1"
 sleep 3
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "newfs_apfs -A -v DataB /dev/disk0s1"
@@ -19,8 +29,6 @@ elif [[ ./build.tgz ]]; then
 elif [[ ./build.tar.gz ]]; then
     ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -P 2222 ./build.tar.gz root@localhost:/mnt4
 fi
-./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost ""
-./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost ""
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt4/etc/fstab"
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt4/usr/standalone/firmware/sep-firmware.img4"
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt4/usr/standalone/firmware/FUD"
