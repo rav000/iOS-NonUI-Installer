@@ -1,6 +1,7 @@
 #!/bin/zsh
 echo "iOS-NonUI-Installer"
 echo "Written by @whosdraaa and @rav000"
+build_tar=""
 
 #copy files from device
 
@@ -11,6 +12,7 @@ sleep 3
 sleep 3
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mount_apfs /dev/disk0s1s4 /mnt4"
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mount_apfs /dev/disk0s1s5 /mnt5"
+if [[ build.tar ]]; then
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost ""
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost ""
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt4/etc/fstab"
