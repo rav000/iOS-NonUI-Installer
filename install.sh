@@ -12,7 +12,13 @@ sleep 3
 sleep 3
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mount_apfs /dev/disk0s1s4 /mnt4"
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mount_apfs /dev/disk0s1s5 /mnt5"
-if [[ build.tar ]]; then
+if [[ ./build.tar ]]; then
+    ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -P 2222 ./build.tar root@localhost:/mnt4
+elif [[ ./build.tgz ]]; then
+    ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -P 2222 ./build.tgz root@localhost:/mnt4
+elif [[ ./build.tar.gz ]]; then
+    ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -P 2222 ./build.tar.gz root@localhost:/mnt4
+fi
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost ""
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost ""
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt4/etc/fstab"
@@ -31,4 +37,3 @@ if [[ build.tar ]]; then
 ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -P 2222 ./files/keybagd root@localhost:/mnt4/usr/libexec
 ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -r -P 2222 ./files/FUD root@localhost:/mnt4/usr/standalone/firmware
 ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -r -P 2222 ./files/multitouch root@localhost:/mnt4/usr/share/firmware
-
