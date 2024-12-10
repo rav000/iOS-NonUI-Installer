@@ -13,7 +13,8 @@ sleep 6
 ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -r -P 2222 root@localhost:/mnt1/usr/share/firmware/multitouch ./files/multitouch
 
 #install, modify, and delete nonUI files
-read -p "Press enter if you are in a ramdisk and copy NonUI build in tar/tgz/tar.gz" r1
+echo "Done copying files from /mnt1 and /mnt2."
+read -p "Press enter if you are ready to install NonUI. Don't forget to copy NonUI 11.0 dump in tar/tgz/tar.gz" r1
 echo "Waiting 6 seconds before continuing.."
 sleep 6
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "newfs_apfs -A -v SystemB /dev/disk0s1"
