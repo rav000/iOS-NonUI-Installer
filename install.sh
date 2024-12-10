@@ -2,7 +2,7 @@
 echo "iOS-NonUI-Installer"
 echo "Written by @whosdraaa and @rav000"
 
-read -p "Press enter if you are in a ramdisk." r1
+read -p "Press enter if you are in a Semaphorin ramdisk." r1
 echo "Waiting 6 seconds before continuing.."
 sleep 6
 #copy files from device
