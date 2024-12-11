@@ -58,4 +58,4 @@ Quickly install or dualboot NonUI on checkm8 devices!
 
 # Notes
 
-This script are only tested on iOS 12 devices, not iOS 15+. Please only use it on iOS 12 devices, **I am not responsible for any data loss or damaging the device with this script**.
+This script are only tested on iOS 12 devices, not iOS 15+. Please only use it on iOS 12 devices. Make sure to backup all of your data before using this script, **I am not responsible for any data loss or damaging the device with this script**.
