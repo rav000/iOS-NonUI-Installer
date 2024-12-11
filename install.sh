@@ -17,11 +17,9 @@ echo "Done copying files from /mnt1 and /mnt2."
 read -p "Press enter if you are ready to install NonUI. Don't forget to copy NonUI 11.0 dump in tar/tgz/tar.gz" r1
 echo "Waiting 6 seconds before continuing.."
 sleep 6
-./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "newfs_apfs -A -v SystemB /dev/disk0s1"
-./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "y"
+./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "/sbin/newfs_apfs -A -v SystemB /dev/disk0s1"
 sleep 3
-./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "newfs_apfs -A -v DataB /dev/disk0s1"
-./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "y"
+./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "/sbin/newfs_apfs -A -v DataB /dev/disk0s1"
 sleep 3
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mount_apfs /dev/disk0s1s4 /mnt4"
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mount_apfs /dev/disk0s1s5 /mnt5"
