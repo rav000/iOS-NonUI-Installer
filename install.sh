@@ -28,6 +28,8 @@ sleep 3
 ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -P 2222 ./build.tgz root@localhost:/mnt5 #if all not exist, then exit
 #install nonUI
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "tar -xvf /mnt4/build.tar -C /mnt5"
+./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "tar -xvf /mnt4/build.tar.gz -C /mnt5"
+./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "tar -xvf /mnt4/build.tgz -C /mnt5"
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mv -v /mnt4/private/var/* /mnt5"
 #edit shit
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt4/etc/fstab"
