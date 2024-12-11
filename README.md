@@ -45,3 +45,13 @@ Quickly install or dualboot NonUI on checkm8 devices!
         <tr><td>A11 devices</td></tr>
     </tbody>
 </table>
+
+# How to use
+
+1. SSH ramdisk using Semaphorin
+2. Make placeholder partition `newfs_apfs -A /dev/disk0s1` (only if you are using A7, Wi-Fi only iPads, and iPod touch)
+3. Download NonUI dump, rename it to `build.tar` or `build.tar.gz` or `build.tgz`
+4. Run `./install.sh` and let it do its own thing
+5. For bootchain, do it on your own (gonna add it soon™)
+6. To boot it, add your patched bootchain files into `boot` folder
+7. To boot NonUI, use `./boot.sh`
