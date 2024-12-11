@@ -1,3 +1,4 @@
+Project is still on WIP, updated every time I can
 # iOS-NonUI-Installer
 Quickly install or dualboot NonUI on checkm8 devices!
 
