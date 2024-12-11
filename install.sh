@@ -39,7 +39,7 @@ fi
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt4/usr/local/standalone/firmware/Baseband"
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt4/System/Library/Caches/com.apple.dyld/dyld_shared_cache_arm64.development"
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "rm -rf /mnt5/keybags"
-./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mv /mnt4/usr/libexec/keybagd /mnt1/usr/libexec/keybagd_bak"
+./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "mv /mnt4/usr/libexec/keybagd /mnt4/usr/libexec/keybagd_bak"
 
 #send files to device
 ./bin/sshpass -p "alpine" scp -o StrictHostKeyChecking=no -P 2222 ./files/fstab root@localhost:/mnt4/etc
