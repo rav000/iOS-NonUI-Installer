@@ -1,2 +1,2 @@
-/dev/disk0s1s4 / apfs ro 0 1
-/dev/disk0s1s5 /private/var apfs rw,nosuid,nodev 0 2
+/dev/disk0s1s1 / apfs ro 0 1
+/dev/disk0s1s2 /private/var apfs rw,nosuid,nodev 0 2

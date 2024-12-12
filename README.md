@@ -2,7 +2,7 @@ Project is still on WIP, updated as fast as possible
 
 Also lmk if something wrong is happening, I'll fix it asap
 
-iOS 15 support is untested, just don't use it as of now
+This version **only** for 16GB devices, works for all iOS 12 and 15 devices
 # iOS-NonUI-Installer
 Quickly install or dualboot NonUI on checkm8 devices!
 
