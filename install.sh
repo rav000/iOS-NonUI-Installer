@@ -2,8 +2,8 @@
 echo "iOS-NonUI-Installer"
 echo "Written by @whosdraaa and @rav000"
 
-read -p "Press enter if you are in a Semaphorin ramdisk." r1
-echo "Waiting 6 seconds before continuing.."
+echo "Make sure you are in Semaphorin ramdisk."
+echo "Waiting 6 seconds before continuing..."
 sleep 6
 #copy files from device
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "/usr/bin/mount_filesystems"
@@ -15,7 +15,7 @@ sleep 6
 #meow
 echo "Done copying files from /mnt1 and /mnt2."
 read -p "Press enter if you are ready to install NonUI. Don't forget to copy NonUI 11.0 dump in tar/tgz/tar.gz" r1
-echo "Waiting 6 seconds before continuing.."
+echo "Waiting 6 seconds before continuing..."
 sleep 6
 ./bin/sshpass -p 'alpine' ssh -o StrictHostKeyChecking=no -p2222 root@localhost "/sbin/newfs_apfs -A -v SystemB /dev/disk0s1"
 sleep 3
