@@ -56,6 +56,13 @@ Quickly install or dualboot NonUI on checkm8 devices!
 6. To boot it, add your patched bootchain files into `boot` folder
 7. To boot NonUI, use `./boot.sh`
 
+# SSH into the device while SwitchBoard is running
+
+1. Make sure the device booted into SwitchBoard and plugged into your Mac
+2. Open terminal windor and run `iproxy 2222 22`
+3. Open another terinal window and run `ssh -oHostKeyAlgorithms=+ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1 -p 2222 root@localhost`
+4. If it asks for password, use `alpine` as the password
+
 # Notes
 
 This script are only tested on iOS 12 devices, not iOS 15+. Please only use it on iOS 12 devices. Make sure to backup all of your data before using this script, **I am not responsible for any data loss or damaging the device with this script**.
