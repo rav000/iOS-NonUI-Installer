@@ -56,8 +56,8 @@ Quickly install or dualboot NonUI on checkm8 devices!
 4. Run `./install.sh` and let it do its own thing
 5. Decrypt ibss, ibec, and dtree and put it into `boot` folder
 6. Rename kernelcache.release.boardconfig to kernelcache.release and put it into `boot` folder
-7. Put your im4m besides `make_bootchain.sh`
-8. Generate bootchain files using `make_bootchain.sh`
+7. Put your im4m besides `./make_bootchain.sh`
+8. Generate bootchain files using `./make_bootchain.sh`
 9. Boot NonUI, use `./boot.sh`
 
 # SSH into the device while SwitchBoard is running
