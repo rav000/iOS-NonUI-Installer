@@ -15,3 +15,5 @@ echo "Patching kernelcache"
 echo "Patching devicetre"
 ./bin/dtree_patcher ./boot/dtree.raw ./boot/dtree.patched -n
 ./bin/img4 -i ./boot/dtree.patched -o ./boot/devicetree.img4 -M IM4M -A -T rdtr
+
+echo "Boot all using ./boot.sh"
