@@ -63,8 +63,8 @@ Quickly install or dualboot NonUI on checkm8 devices!
 # SSH into the device while SwitchBoard is running
 
 1. Make sure the device booted into SwitchBoard and plugged into your Mac
-2. Open terminal windor and run `iproxy 2222 22`
-3. Open another terinal window and run `ssh -oHostKeyAlgorithms=+ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1 -p 2222 root@localhost`
+2. Open terminal windor and run `iproxy 2223 22`
+3. Open another terinal window and run `ssh -oHostKeyAlgorithms=+ssh-rsa -oKexAlgorithms=+diffie-hellman-group1-sha1 -p 2223 root@localhost`
 4. If it asks for password, use `alpine` as the password
 
 # Notes
