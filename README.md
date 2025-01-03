@@ -50,15 +50,17 @@ Quickly install or dualboot NonUI on checkm8 devices!
 
 # How to use
 
-1. SSH ramdisk using Semaphorin
+1. SSH ramdisk using Semaphorin (depends on what ios version running on)
 2. Make placeholder partition `newfs_apfs -A /dev/disk0s1` (only if you are using A7, Wi-Fi only iPads, and iPod touch)
 3. Download NonUI dump, rename it to `build.tar` or `build.tar.gz` or `build.tgz`
-4. Run `./install.sh` and let it do its own thing
-5. Decrypt ibss, ibec, and dtree and put it into `boot` folder
-6. Rename kernelcache.release.boardconfig to kernelcache.release and put it into `boot` folder
-7. Put your im4m besides `./make_bootchain.sh`
-8. Generate bootchain files using `./make_bootchain.sh`
-9. Boot NonUI useing `./boot.sh`
+4. Run `./copy_stuff.sh` and let it do its own thing
+5. SSH ramdisk using Semaphorin (again, depends on nonUI version wanted to install)
+6. Run `./install.sh` and let it do its own thing
+7. Decrypt ibss, ibec, and dtree and put it into `boot` folder
+8. Rename kernelcache.release.boardconfig to kernelcache.release and put it into `boot` folder
+9. Put your im4m besides `./make_bootchain.sh`
+10. Generate bootchain files using `./make_bootchain.sh`
+11. Boot NonUI useing `./boot.sh`
 
 # SSH into the device while SwitchBoard is running
 
